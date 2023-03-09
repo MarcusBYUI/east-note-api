@@ -1,0 +1,5 @@
+# Logs
+Pipfile
+Pipfile.lock
+
+/easynoteapi/easynoteapi/settings.py
