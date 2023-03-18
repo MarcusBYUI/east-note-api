@@ -11,6 +11,11 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -23,12 +28,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-*l0@^h14r(37l9v_zo3q9pts$=_l51u+ffn8+8t&c&$n0@edf!'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
 CORS_ALLOWED_ORIGINS = [
-    'http://localhost:3000',
+    'https://mail.google.com',
 ]
 
 CORS_ALLOW_METHODS = [
@@ -111,8 +116,11 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'easynote',
-        'USER': 'root',
-        'PASSWORD': 'Pronet97?'
+        'USER': os.environ.get('DB_USER'),
+        'PASSWORD': os.environ.get('DB_PASS'),
+        # Or an IP Address that your DB is hosted on
+        'HOST': 'database-1.cluol66mlbx7.us-east-1.rds.amazonaws.com',
+        'PORT': '3306',
     }
 }
 

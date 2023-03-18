@@ -1,5 +1,6 @@
 # Logs
 Pipfile
 Pipfile.lock
-
+env
+.env
 /easynoteapi/easynoteapi/settings.py
