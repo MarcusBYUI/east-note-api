@@ -30,7 +30,7 @@ SECRET_KEY = 'django-insecure-*l0@^h14r(37l9v_zo3q9pts$=_l51u+ffn8+8t&c&$n0@edf!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 CORS_ALLOWED_ORIGINS = [
     'https://mail.google.com',
