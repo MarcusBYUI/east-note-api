@@ -16,9 +16,7 @@ import os
 
 load_dotenv()
 
-# FOR RENDER
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY', default='your secret key')
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -33,14 +31,10 @@ SECRET_KEY = 'django-insecure-*l0@^h14r(37l9v_zo3q9pts$=_l51u+ffn8+8t&c&$n0@edf!
 DEBUG = False
 
 ALLOWED_HOSTS = ["*"]
+
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:3000',
 ]
-
-RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
-if RENDER_EXTERNAL_HOSTNAME:
-    CORS_ALLOWED_ORIGINS.append(RENDER_EXTERNAL_HOSTNAME)
-
 
 CORS_ALLOW_METHODS = [
     "DELETE",
